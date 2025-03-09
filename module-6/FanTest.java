@@ -1,13 +1,13 @@
 // Katie Hilliard, 02/02/2025, Module 6
 
 class Fan {
-    // Four constants for speed settings
+    // Constants for speed settings
     public static final int STOPPED = 0;
     public static final int SLOW = 1;
     public static final int MEDIUM = 2;
     public static final int FAST = 3;
 
-    // Private Boolean fields
+    // Private fields
     private int speed;
     private boolean on;
     private double radius;
@@ -31,7 +31,7 @@ class Fan {
 
     // Getter and Setter methods
     public int getSpeed() {
-        return speed;
+        return this.speed;
     }
 
     public void setSpeed(int speed) {
@@ -44,7 +44,7 @@ class Fan {
     }
 
     public boolean isOn() {
-        return on;
+        return this.on;
     }
 
     public void setOn(boolean on) {
@@ -52,7 +52,7 @@ class Fan {
     }
 
     public double getRadius() {
-        return radius;
+        return this.radius;
     }
 
     public void setRadius(double radius) {
@@ -60,7 +60,7 @@ class Fan {
     }
 
     public String getColor() {
-        return color;
+        return this.color;
     }
 
     public void setColor(String color) {
@@ -70,32 +70,10 @@ class Fan {
     // toString method to return description of fan's state
     @Override
     public String toString() {
-        if (on) {
-            return "Fan is ON | Speed: " + speed + " | Radius: " + radius + " | Color: " + color;
+        if (this.on) {
+            return "Fan is ON | Speed: " + this.speed + " | Radius: " + this.radius + " | Color: " + this.color;
         } else {
-            return "Fan is OFF | Radius: " + radius + " | Color: " + color;
+            return "Fan is OFF | Radius: " + this.radius + " | Color: " + this.color;
         }
-    }
-}
-
-// Test code
-public class FanTest {
-    public static void main(String[] args) {
-        // Create fan objects
-        Fan defaultFan = new Fan();
-        Fan customFan = new Fan(Fan.FAST, true, 10, "blue");
-
-        // Display fan states
-        System.out.println("Default Fan: " + defaultFan);
-        System.out.println("Custom Fan: " + customFan);
-
-        // Test mutator methods
-        defaultFan.setSpeed(Fan.MEDIUM);
-        defaultFan.setOn(true);
-        defaultFan.setRadius(8);
-        defaultFan.setColor("red");
-
-        // Display updated state
-        System.out.println("Updated Default Fan: " + defaultFan);
     }
 }
